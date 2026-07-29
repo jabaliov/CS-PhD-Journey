@@ -194,6 +194,8 @@ button {
 .story-card,
 .area-card,
 .info-panel,
+.lesson-card,
+.foundation-card,
 .glossary-item,
 .question-card,
 .timeline-item,
@@ -246,7 +248,9 @@ button {
 .cards-grid,
 .glossary-grid,
 .question-grid,
-.checklist {
+.checklist,
+.foundation-grid,
+.lesson-links-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   margin-top: 20px;
 }
@@ -254,10 +258,128 @@ button {
 .story-card,
 .area-card,
 .info-panel,
+.lesson-card,
+.lesson-link-card,
 .question-card,
 .check-item,
 .lesson-placeholder {
   padding: 20px;
+}
+
+.lessons-stack {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.lesson-card {
+  padding: 24px;
+}
+
+.lesson-link-card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  box-shadow: 0 12px 30px rgba(26, 31, 44, 0.05);
+}
+
+.lesson-link-card h3 {
+  margin: 10px 0 8px;
+  font-family: "Cairo", sans-serif;
+}
+
+.lesson-link-card p {
+  margin: 0;
+}
+
+.lesson-header h3,
+.lesson-section h4,
+.lesson-takeaway strong,
+.comparison-head span,
+.foundation-card strong {
+  font-family: "Cairo", sans-serif;
+}
+
+.lesson-level {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(14, 109, 102, 0.12);
+  color: var(--brand-deep);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.lesson-header h3,
+.lesson-section h4 {
+  margin: 0 0 10px;
+}
+
+.lesson-section {
+  margin-top: 24px;
+}
+
+.lesson-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.foundation-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.foundation-card p {
+  margin: 6px 0 0;
+}
+
+.foundation-arabic {
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+.comparison-table {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.comparison-row:last-child {
+  border-bottom: none;
+}
+
+.comparison-head {
+  background: rgba(14, 109, 102, 0.1);
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+.lesson-takeaway {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(211, 124, 50, 0.12), rgba(14, 109, 102, 0.08));
+  border: 1px solid var(--line);
+}
+
+.lesson-takeaway p {
+  margin: 8px 0 0;
 }
 
 .area-card {
@@ -366,7 +488,8 @@ button {
 @media (max-width: 860px) {
   .topbar,
   .hero-grid,
-  .detail-grid {
+  .detail-grid,
+  .comparison-row {
     grid-template-columns: 1fr;
   }
 

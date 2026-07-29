@@ -1,4 +1,4 @@
-const siteData = {
+export const siteData = {
   intro: {
     title: "علوم الحاسب: ما الذي سندرسه فعلًا؟",
     summary:
@@ -90,7 +90,8 @@ const siteData = {
         { term: "Throughput", arabic: "معدل النقل الفعلي", pronunciation: "THROO-put" },
         { term: "Packet Loss", arabic: "فقدان الرزم", pronunciation: "PAK-it loss" },
         { term: "Quality of Service", arabic: "جودة الخدمة", pronunciation: "KWA-li-tee ov SUR-vis" }
-      ]
+      ],
+      lessons: []
     },
     software: {
       code: "CS 702",
@@ -126,6 +127,89 @@ const siteData = {
         { term: "Scalability", arabic: "قابلية التوسع", pronunciation: "SKAY-luh-BIL-uh-tee" },
         { term: "Coupling", arabic: "الترابط", pronunciation: "KUP-ling" },
         { term: "Cohesion", arabic: "الانسجام الوظيفي", pronunciation: "koh-HEE-zhun" }
+      ],
+      lessons: [
+        {
+          id: "se-vs-design",
+          level: "تمهيدي",
+          title: "ما الفرق بين هندسة البرمجيات وتصميم البرمجيات؟",
+          summary:
+            "هندسة البرمجيات هي الإطار الأشمل الذي يغطي دورة حياة النظام كاملة، بينما تصميم البرمجيات هو الجزء الذي يركز على بنية الحل الداخلي وكيفية تنظيم مكوناته.",
+          foundations: [
+            {
+              term: "Software Engineering",
+              arabic: "هندسة البرمجيات",
+              definition:
+                "مجال يهتم ببناء البرمجيات بطريقة منهجية ومنظمة، من جمع المتطلبات حتى الصيانة والتطوير المستقبلي."
+            },
+            {
+              term: "Software Design",
+              arabic: "تصميم البرمجيات",
+              definition:
+                "عملية تحديد شكل النظام من الداخل: ما مكوناته، ما مسؤولية كل جزء، وكيف تتواصل هذه الأجزاء مع بعضها."
+            },
+            {
+              term: "System Lifecycle",
+              arabic: "دورة حياة النظام",
+              definition:
+                "المراحل التي يمر بها النظام، مثل التحليل، التصميم، التنفيذ، الاختبار، النشر، ثم الصيانة."
+            }
+          ],
+          sections: [
+            {
+              title: "الفكرة الأساسية",
+              body: [
+                "عندما نقول هندسة البرمجيات، فنحن نتحدث عن المجال الذي يهتم بكيفية بناء نظام برمجي ناجح بشكل كامل، لا مجرد كتابة كود يعمل. هذا يشمل فهم المشكلة، جمع المتطلبات، تخطيط العمل، اختيار منهجية التطوير، التصميم، الاختبار، النشر، ثم متابعة النظام بعد إطلاقه.",
+                "أما تصميم البرمجيات فهو جزء داخل هذه الرحلة. السؤال هنا لا يكون: كيف ندير المشروع كله؟ بل: كيف نرتب الحل نفسه؟ كيف نقسم النظام إلى أجزاء؟ وما المسؤولية الدقيقة لكل جزء؟ وكيف نضمن أن تكون العلاقات بين الأجزاء واضحة وقابلة للصيانة؟"
+              ]
+            },
+            {
+              title: "الفرق في زاوية النظر",
+              body: [
+                "هندسة البرمجيات تنظر إلى النظام كمنتج وكعملية في الوقت نفسه. لذلك هي تهتم بالناس، والعمليات، والجودة، والمخاطر، والتغيير عبر الزمن.",
+                "تصميم البرمجيات ينظر إلى داخل الحل نفسه. يهتم بالمعمارية، والواجهات، والمكونات، وأنماط التصميم، والمقايضات الفنية التي تؤثر على جودة النظام."
+              ]
+            },
+            {
+              title: "مثال عملي بسيط",
+              body: [
+                "لو كنت تبني منصة تعليمية، فهندسة البرمجيات ستسأل: ما المتطلبات؟ من المستخدمون؟ كيف سنختبر المنصة؟ كيف سننشرها؟ وكيف سنتعامل مع التحديثات والمشكلات بعد الإطلاق؟",
+                "أما تصميم البرمجيات فسيسأل: هل نجعل النظام تطبيقًا واحدًا Monolith أم خدمات متعددة Microservices؟ كيف نفصل بين حسابات المستخدمين، والدروس، والاختبارات؟ وكيف تنتقل البيانات بين هذه الوحدات؟"
+              ]
+            },
+            {
+              title: "الخلاصة العلمية",
+              body: [
+                "كل تصميم برمجيات هو جزء من هندسة البرمجيات، لكن هندسة البرمجيات ليست مجرد تصميم. التصميم يهتم ببنية الحل، أما الهندسة فتهتم ببنية الحل وبعملية إنتاجه وضمان جودته واستمراره.",
+                "وهذا الفرق مهم جدًا في مستوى الدكتوراه، لأن كثيرًا من النقاشات الأكاديمية لا تركز فقط على شكل النظام، بل على كيفية تبرير القرارات التصميمية، وكيفية قياس أثرها على الجودة، وما الذي يحدث عند توسع النظام أو تغير متطلباته."
+              ]
+            }
+          ],
+          comparison: [
+            {
+              aspect: "النطاق",
+              engineering: "يشمل دورة الحياة الكاملة للنظام.",
+              design: "يركز على بنية النظام الداخلية."
+            },
+            {
+              aspect: "السؤال الأساسي",
+              engineering: "كيف نبني ونشغّل ونحافظ على نظام ناجح؟",
+              design: "كيف ننظم مكونات النظام وعلاقاته؟"
+            },
+            {
+              aspect: "التركيز",
+              engineering: "العمليات، الجودة، الإدارة، التطوير، الاختبار، الصيانة.",
+              design: "المعمارية، المسؤوليات، الواجهات، الترابط، أنماط التصميم."
+            },
+            {
+              aspect: "المخرجات",
+              engineering: "خطة تطوير، متطلبات، اختبارات، عمليات، وممارسات.",
+              design: "نماذج تصميم، تقسيم مكونات، وقرارات معمارية."
+            }
+          ],
+          takeaway:
+            "ثبّت هذه القاعدة من البداية: Design يجيب عن شكل الحل، وEngineering يجيب عن شكل الحل وكيف نبنيه ونحافظ عليه عبر الزمن."
+        }
       ]
     },
     databases: {
@@ -163,7 +247,8 @@ const siteData = {
         { term: "Concurrency Control", arabic: "التحكم في التزامن", pronunciation: "kun-KUR-uhn-see كن-TROHL" },
         { term: "Consistency", arabic: "الاتساق", pronunciation: "kun-SIS-tuhn-see" },
         { term: "Replication", arabic: "النسخ المتماثل", pronunciation: "rep-li-KAY-shun" }
-      ]
+      ],
+      lessons: []
     },
     "computer-architecture": {
       code: "CS 704",
@@ -200,261 +285,8 @@ const siteData = {
         { term: "Pipeline", arabic: "خط الأنابيب التنفيذي", pronunciation: "PIPE-line" },
         { term: "Virtualization", arabic: "المحاكاة الافتراضية", pronunciation: "vur-choo-uh-luh-ZAY-shun" },
         { term: "Parallelism", arabic: "التوازي", pronunciation: "PAIR-uh-luh-liz-um" }
-      ]
+      ],
+      lessons: []
     }
   }
 };
-
-const app = document.querySelector("#app");
-const speakPageButton = document.querySelector("#speak-page");
-
-function escapeHtml(text) {
-  return text
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function areaCard(area) {
-  return `
-    <a class="area-card" href="#/areas/${area.id}">
-      <span class="course-code">${escapeHtml(area.code)}</span>
-      <h3>${escapeHtml(area.title)}</h3>
-      <p class="english-line">${escapeHtml(area.english)}</p>
-      <p>${escapeHtml(area.teaser)}</p>
-    </a>
-  `;
-}
-
-function glossaryItem(item) {
-  return `
-    <article class="glossary-item">
-      <div>
-        <h4>${escapeHtml(item.term)}</h4>
-        <p>${escapeHtml(item.arabic)}</p>
-        <small>النطق التقريبي: ${escapeHtml(item.pronunciation)}</small>
-      </div>
-      <button class="speak-term" type="button" data-term="${escapeHtml(item.term)}">
-        نطق المصطلح
-      </button>
-    </article>
-  `;
-}
-
-function renderHome() {
-  const { intro } = siteData;
-  return `
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">مدخل</p>
-        <h2>${escapeHtml(intro.title)}</h2>
-        <p>${escapeHtml(intro.summary)}</p>
-      </div>
-      <div class="story-grid">
-        ${intro.paragraphs.map((paragraph) => `<p class="story-card">${escapeHtml(paragraph)}</p>`).join("")}
-      </div>
-    </section>
-
-    <section class="section-block" id="areas">
-      <div class="section-heading">
-        <p class="eyebrow">المجالات الأساسية</p>
-        <h2>المقررات الإلزامية التي سنبني عليها رحلتك</h2>
-        <p>اضغط على أي مجال لتجد صفحة تعريفية مفصلة تتضمن: لماذا هو مهم، ما الأساسيات التي يجب فهمها، أهم المصطلحات، وأفكار الدروس القادمة.</p>
-      </div>
-      <div class="cards-grid">
-        ${intro.fields.map(areaCard).join("")}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">كيف سنضيف الدروس؟</p>
-        <h2>نظام تعلّم يتوسع مع أسئلتك</h2>
-      </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <strong>1. التهيئة</strong>
-          <p>تقرأ صفحة المجال حتى تتكون لديك صورة شاملة ومصطلحات أولية.</p>
-        </article>
-        <article class="timeline-item">
-          <strong>2. السؤال</strong>
-          <p>تكتب لي السؤال الذي خطر ببالك حول المجال أو أي مفهوم داخله.</p>
-        </article>
-        <article class="timeline-item">
-          <strong>3. بناء الدرس</strong>
-          <p>أضيف درسًا جديدًا يبدأ من الأساسيات اللازمة ثم يتدرج حتى يجيب بدقة عن السؤال.</p>
-        </article>
-        <article class="timeline-item">
-          <strong>4. التراكم</strong>
-          <p>يتحوّل كل سؤال إلى لبنة جديدة في مكتبتك التعليمية الشخصية.</p>
-        </article>
-      </div>
-    </section>
-  `;
-}
-
-function renderReadiness() {
-  const { readiness } = siteData;
-  return `
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">جاهزية</p>
-        <h2>${escapeHtml(readiness.title)}</h2>
-        <p>${escapeHtml(readiness.note)}</p>
-      </div>
-      <div class="checklist">
-        ${readiness.checkpoints.map((item) => `<article class="check-item">${escapeHtml(item)}</article>`).join("")}
-      </div>
-    </section>
-  `;
-}
-
-function renderAreasIndex() {
-  return `
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">المجالات</p>
-        <h2>اختر المجال الذي تريد الغوص فيه</h2>
-        <p>كل صفحة مجال صُممت لتكون مرجعًا تمهيديًا يسبق بناء الدروس المتخصصة.</p>
-      </div>
-      <div class="cards-grid">
-        ${siteData.intro.fields.map(areaCard).join("")}
-      </div>
-    </section>
-  `;
-}
-
-function renderAreaDetail(areaId) {
-  const area = siteData.areas[areaId];
-
-  if (!area) {
-    return `
-      <section class="section-block">
-        <div class="section-heading">
-          <h2>الصفحة غير موجودة</h2>
-          <p>ارجع إلى <a href="#/">الصفحة الرئيسية</a> لاختيار مجال متاح.</p>
-        </div>
-      </section>
-    `;
-  }
-
-  return `
-    <section class="section-block">
-      <a class="back-link" href="#/areas">العودة إلى المجالات</a>
-      <div class="section-heading">
-        <p class="eyebrow">${escapeHtml(area.code)}</p>
-        <h2>${escapeHtml(area.title)}</h2>
-        <p class="english-line">${escapeHtml(area.english)}</p>
-        <p>${escapeHtml(area.overview)}</p>
-      </div>
-      <div class="detail-grid">
-        <article class="info-panel">
-          <h3>لماذا هذا المجال مهم؟</h3>
-          <p>${escapeHtml(area.whyItMatters)}</p>
-        </article>
-        <article class="info-panel">
-          <h3>الأساسيات التي يجب ألا نتجاوزها</h3>
-          <ul class="compact-list">
-            ${area.fundamentals.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">خريطة المجال</p>
-        <h2>أهم المحاور التي سنبني عليها الدروس لاحقًا</h2>
-      </div>
-      <div class="topic-cloud">
-        ${area.topics.map((topic) => `<span>${escapeHtml(topic)}</span>`).join("")}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">مصطلحات</p>
-        <h2>قاموس أولي مع النطق</h2>
-        <p>هذه المصطلحات ستكون جزءًا من لغتك العلمية في النقاش والقراءة والبحث.</p>
-      </div>
-      <div class="glossary-grid">
-        ${area.glossary.map(glossaryItem).join("")}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="eyebrow">بداية الدروس</p>
-        <h2>كيف سنولّد الدروس في هذا المجال؟</h2>
-        <p>لن نكتب المنهج كاملًا دفعة واحدة. سنحوّل أسئلتك إلى دروس متسلسلة تبدأ من الصفر ثم ترتفع تدريجيًا إلى مستوى بحثي.</p>
-      </div>
-      <div class="question-grid">
-        ${area.questions.map((question) => `<article class="question-card">${escapeHtml(question)}</article>`).join("")}
-      </div>
-      <div class="lesson-placeholder">
-        <h3>الخطوة التالية</h3>
-        <p>أرسل لي أول سؤال يخطر ببالك في هذا المجال، وسأضيف له درسًا عربيًا مفصلًا داخل الموقع مع المصطلحات الإنجليزية والنطق والأساسيات اللازمة للفهم.</p>
-      </div>
-    </section>
-  `;
-}
-
-function renderRoute() {
-  const hash = window.location.hash || "#/";
-  const route = hash.replace(/^#/, "");
-  const parts = route.split("/").filter(Boolean);
-
-  let content = "";
-
-  if (parts.length === 0) {
-    content = renderHome();
-  } else if (parts[0] === "readiness") {
-    content = renderReadiness();
-  } else if (parts[0] === "areas" && parts.length === 1) {
-    content = renderAreasIndex();
-  } else if (parts[0] === "areas" && parts[1]) {
-    content = renderAreaDetail(parts[1]);
-  } else {
-    content = renderAreaDetail("");
-  }
-
-  app.innerHTML = content;
-  wireTermButtons();
-}
-
-function speakText(text, lang = "en-US") {
-  if (!("speechSynthesis" in window)) {
-    window.alert("متصفحك الحالي لا يدعم ميزة النطق.");
-    return;
-  }
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = 0.9;
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utterance);
-}
-
-function wireTermButtons() {
-  document.querySelectorAll(".speak-term").forEach((button) => {
-    button.addEventListener("click", () => {
-      const term = button.dataset.term;
-      if (term) {
-        speakText(term, "en-US");
-      }
-    });
-  });
-}
-
-function speakCurrentPage() {
-  const heading = app.querySelector("h2")?.textContent ?? "";
-  const paragraph = app.querySelector("p")?.textContent ?? "";
-  speakText(`${heading}. ${paragraph}`, "ar-SA");
-}
-
-window.addEventListener("hashchange", renderRoute);
-speakPageButton.addEventListener("click", speakCurrentPage);
-
-renderRoute();

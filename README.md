@@ -76,10 +76,28 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 ## بنية المشروع
 
+تمت إعادة هيكلة المشروع ليكون قابلًا للنمو بشكل احترافي بدل تكديس كل شيء في ملف واحد.
+
 - [index.html](/Users/mohammed/Documents/Computer%20Science/index.html): الهيكل الرئيسي للواجهة
 - [styles.css](/Users/mohammed/Documents/Computer%20Science/styles.css): التصميم، الألوان، والتجاوب
-- [app.js](/Users/mohammed/Documents/Computer%20Science/app.js): المحتوى، التنقل، القاموس، والتفاعلات
+- [src/main.js](/Users/mohammed/Documents/Computer%20Science/src/main.js): نقطة الدخول وتشغيل التطبيق داخل المتصفح
+- [src/router.js](/Users/mohammed/Documents/Computer%20Science/src/router.js): إدارة المسارات والتنقل بين الصفحات والدروس
+- [src/views.js](/Users/mohammed/Documents/Computer%20Science/src/views.js): قوالب الصفحات الرئيسية وصفحات المجالات والدروس
+- [src/components.js](/Users/mohammed/Documents/Computer%20Science/src/components.js): المكونات القابلة لإعادة الاستخدام
+- [src/data/site-data.js](/Users/mohammed/Documents/Computer%20Science/src/data/site-data.js): المحتوى المعرفي للموقع والمجالات والدروس
+- [src/lib/html.js](/Users/mohammed/Documents/Computer%20Science/src/lib/html.js): أدوات مساعدة للتعامل مع النصوص و`HTML`
+- [src/lib/speech.js](/Users/mohammed/Documents/Computer%20Science/src/lib/speech.js): دعم نطق المصطلحات والمحتوى
 - [.github/workflows/deploy-pages.yml](/Users/mohammed/Documents/Computer%20Science/.github/workflows/deploy-pages.yml): النشر التلقائي إلى GitHub Pages
+
+## لماذا هذه البنية؟
+
+هذه الهيكلة تمنح المشروع مزايا مهمة مع ازدياد عدد الدروس:
+
+- فصل المحتوى عن واجهة العرض
+- تسهيل إضافة دروس جديدة دون لمس كل أجزاء المشروع
+- دعم روابط مستقلة للدروس داخل كل مجال
+- تقليل التعقيد عند توسع الموقع مستقبلًا
+- جعل المشروع أسهل للصيانة، والمراجعة، والتطوير
 
 ## النشر المجاني
 
