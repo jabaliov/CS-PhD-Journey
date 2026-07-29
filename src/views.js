@@ -2,10 +2,69 @@ import { siteData } from "./data/site-data.js";
 import { escapeHtml, joinHtml } from "./lib/html.js";
 import { areaCard, glossaryItem, lessonCard, lessonLink } from "./components.js";
 
+function renderBreadcrumb(items) {
+  return `
+    <nav class="breadcrumb" aria-label="مسار الصفحة">
+      ${joinHtml(
+        items.map(
+          (item, index) => `
+            <a class="breadcrumb-item${index === items.length - 1 ? " is-current" : ""}" href="${escapeHtml(item.href)}" ${
+              index === items.length - 1 ? 'aria-current="page"' : ""
+            }>
+              ${escapeHtml(item.label)}
+            </a>
+          `
+        )
+      )}
+    </nav>
+  `;
+}
+
+function renderContextHeader({ eyebrow, title, summary, breadcrumb, meta = "" }) {
+  return `
+    <section class="context-header">
+      ${breadcrumb ? renderBreadcrumb(breadcrumb) : ""}
+      <div class="context-heading">
+        ${eyebrow ? `<p class="eyebrow">${escapeHtml(eyebrow)}</p>` : ""}
+        <h1>${escapeHtml(title)}</h1>
+        ${summary ? `<p class="context-summary">${escapeHtml(summary)}</p>` : ""}
+        ${meta ? `<p class="context-meta">${meta}</p>` : ""}
+      </div>
+    </section>
+  `;
+}
+
 export function renderHome() {
   const { intro } = siteData;
 
   return `
+    <section class="hero">
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <p class="eyebrow">جامعة الملك عبدالعزيز • علوم الحاسب</p>
+          <h1>موقع تعليمي يبني فهمًا عميقًا قبل الدكتوراه</h1>
+          <p class="lead">
+            هذه الصفحة هي المدخل العام فقط. بعد ذلك، تتحول كل صفحة داخلية إلى مساحة مركزة
+            على المجال أو الدرس نفسه دون تكرار قصة الموقع في كل مرة.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#/areas">ابدأ بالمجالات</a>
+            <a class="secondary-button" href="#/readiness">جاهزيتي للدكتوراه</a>
+          </div>
+        </section>
+
+        <aside class="hero-panel">
+          <h2>فلسفة التعلّم هنا</h2>
+          <ul class="compact-list">
+            <li>الشرح بالعربية مع تثبيت المصطلحات الإنجليزية.</li>
+            <li>البدء من الأساسيات التي لا يصح تجاوزها.</li>
+            <li>الانتقال من الفهم إلى النقاش والبحث والتحليل.</li>
+            <li>بناء الدروس القادمة حسب أسئلتك أنت.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
     <section class="section-block">
       <div class="section-heading">
         <p class="eyebrow">مدخل</p>
@@ -58,6 +117,13 @@ export function renderHome() {
 export function renderReadiness() {
   const { readiness } = siteData;
   return `
+    ${renderContextHeader({
+      eyebrow: "الاستعداد الأكاديمي",
+      title: readiness.title,
+      summary:
+        "هذه الصفحة ليست تعريفًا بالموقع، بل قائمة تحقق سريعة تساعدك على تقييم موقعك الحالي قبل التوسع في الدروس والمجالات."
+    })}
+
     <section class="section-block">
       <div class="section-heading">
         <p class="eyebrow">جاهزية</p>
@@ -73,6 +139,13 @@ export function renderReadiness() {
 
 export function renderAreasIndex() {
   return `
+    ${renderContextHeader({
+      eyebrow: "خريطة التخصص",
+      title: "المجالات الأساسية في رحلتك",
+      summary:
+        "من هنا تبدأ الملاحة الحقيقية للموقع: اختر المجال، ثم انتقل إلى صفحته، ثم إلى دروسه، دون أن تعاد عليك مقدمة الموقع في كل مستوى."
+    })}
+
     <section class="section-block">
       <div class="section-heading">
         <p class="eyebrow">المجالات</p>
@@ -94,13 +167,22 @@ export function renderAreaDetail(areaId) {
   }
 
   return `
+    ${renderContextHeader({
+      eyebrow: area.code,
+      title: area.title,
+      summary: area.overview,
+      meta: `${escapeHtml(area.english)} • ${area.lessons.length} دروس حاليًا`,
+      breadcrumb: [
+        { label: "المجالات", href: "#/areas" },
+        { label: area.title, href: `#/areas/${areaId}` }
+      ]
+    })}
+
     <section class="section-block">
-      <a class="back-link" href="#/areas">العودة إلى المجالات</a>
       <div class="section-heading">
-        <p class="eyebrow">${escapeHtml(area.code)}</p>
-        <h2>${escapeHtml(area.title)}</h2>
-        <p class="english-line">${escapeHtml(area.english)}</p>
-        <p>${escapeHtml(area.overview)}</p>
+        <p class="eyebrow">لماذا هذا المجال؟</p>
+        <h2>ما الذي ستبنيه هذه الصفحة لك؟</h2>
+        <p>الترتيب هنا مقصود: تبدأ بالسياق، ثم الأساسيات، ثم خريطة الموضوعات، ثم المصطلحات، ثم تنتقل إلى بنك الدروس.</p>
       </div>
       <div class="detail-grid">
         <article class="info-panel">
@@ -180,16 +262,22 @@ export function renderLessonDetail(areaId, lessonId) {
   }
 
   return `
+    ${renderContextHeader({
+      eyebrow: `${area.code} • درس`,
+      title: lesson.title,
+      summary: lesson.summary,
+      meta: `${escapeHtml(area.title)} • ${escapeHtml(area.english)}`,
+      breadcrumb: [
+        { label: "المجالات", href: "#/areas" },
+        { label: area.title, href: `#/areas/${areaId}` },
+        { label: lesson.title, href: `#/areas/${areaId}/lessons/${lesson.id}` }
+      ]
+    })}
+
     <section class="section-block">
-      <a class="back-link" href="#/areas/${areaId}">العودة إلى ${escapeHtml(area.title)}</a>
-      <div class="section-heading">
-        <p class="eyebrow">${escapeHtml(area.code)} • درس</p>
-        <h2>${escapeHtml(lesson.title)}</h2>
-        <p>${escapeHtml(area.title)} • ${escapeHtml(area.english)}</p>
-      </div>
       <div class="lesson-navigation">
         <a class="secondary-button" href="#/areas/${areaId}">صفحة المجال</a>
-        <a class="primary-button" href="#/areas/${areaId}/lessons/${lesson.id}">الرابط الحالي للدرس</a>
+        <a class="primary-button" href="#/areas/${areaId}/lessons/${lesson.id}">رابط الدرس</a>
       </div>
     </section>
 
@@ -201,10 +289,17 @@ export function renderLessonDetail(areaId, lessonId) {
 
 export function renderNotFound() {
   return `
+    ${renderContextHeader({
+      eyebrow: "خطأ في المسار",
+      title: "الصفحة غير موجودة",
+      summary: "قد يكون الرابط غير صحيح، أو أن الصفحة لم تُنشأ بعد.",
+      breadcrumb: [{ label: "الصفحة غير موجودة", href: "#/" }]
+    })}
+
     <section class="section-block">
       <div class="section-heading">
-        <h2>الصفحة غير موجودة</h2>
-        <p>ارجع إلى <a href="#/">الصفحة الرئيسية</a> لاختيار صفحة متاحة.</p>
+        <h2>ارجع إلى المسار الرئيسي</h2>
+        <p>اختر <a href="#/">الصفحة الرئيسية</a> أو انتقل إلى <a href="#/areas">المجالات</a> للمتابعة.</p>
       </div>
     </section>
   `;

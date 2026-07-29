@@ -51,7 +51,16 @@ button {
   padding: 24px 0 56px;
 }
 
-.hero {
+.site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  margin-bottom: 22px;
+}
+
+.hero,
+.topbar-compact,
+.context-header {
   position: relative;
   overflow: hidden;
   padding: 28px;
@@ -79,6 +88,30 @@ button {
 .topbar {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+}
+
+.topbar-compact {
+  padding: 18px 24px;
+}
+
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.topbar-link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.topbar-link:hover {
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--ink);
 }
 
 .brand {
@@ -221,7 +254,60 @@ button {
 }
 
 .app-content {
-  margin-top: 28px;
+  margin-top: 18px;
+}
+
+.context-header {
+  margin-bottom: 22px;
+  padding: 22px 24px;
+}
+
+.context-heading h1 {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  line-height: 1.2;
+}
+
+.context-summary,
+.context-meta {
+  margin: 10px 0 0;
+  max-width: 72ch;
+  color: var(--muted);
+}
+
+.context-meta {
+  color: var(--brand-deep);
+  font-weight: 600;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.breadcrumb-item {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.breadcrumb-item::after {
+  content: "‹";
+  margin-inline: 10px 0;
+  color: rgba(29, 36, 51, 0.34);
+}
+
+.breadcrumb-item.is-current {
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+.breadcrumb-item.is-current::after {
+  content: "";
+  margin: 0;
 }
 
 .section-block {
@@ -493,12 +579,21 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .topbar-actions {
+    justify-content: flex-start;
+  }
+
   .ghost-button {
     justify-self: start;
   }
 
   .hero {
     padding: 22px;
+  }
+
+  .topbar-compact,
+  .context-header {
+    padding: 18px;
   }
 
   .section-block {
