@@ -1,102 +1,103 @@
-# CS PhD Journey
+# رحلة الدكتوراه في علوم الحاسب
 
-Arabic-first educational website designed to support deep preparation for a PhD in Computer Science through structured topic overviews, foundational scaffolding, and progressive learning paths.
+منصة تعليمية عربية صُممت لدعم الاستعداد العميق لدراسة الدكتوراه في علوم الحاسب، من خلال تقديم مدخل منظم للمجالات الأساسية، وتثبيت الأساسيات التي لا ينبغي تجاوزها، وبناء مسار تعلم يتوسع تدريجيًا مع الوقت.
 
-This project began as a personal doctoral preparation environment based on the required PhD coursework in Computer Science at King Abdulaziz University. It is being shaped into a public learning experience so that other learners can benefit from the same idea: build mastery from first principles, strengthen technical vocabulary, and grow toward research-level understanding one concept at a time.
+بدأ هذا المشروع كتجربة شخصية للاستعداد لبرنامج الدكتوراه في علوم الحاسب بجامعة الملك عبدالعزيز، ثم تطور إلى موقع قابل للنشر العام حتى يستفيد منه كل من يريد بناء فهم أكاديمي متين قبل الدخول في المقررات المتقدمة والاتجاهات البحثية.
 
-## Vision
+## الرؤية
 
-The goal of this project is not to present isolated summaries of advanced topics. It is to create a serious learning space that helps the learner:
+هذا المشروع لا يهدف إلى عرض ملخصات سريعة أو شروحات سطحية، بل إلى بناء بيئة تعلم جادة تساعد على:
 
-- understand each field from its foundations before moving into advanced material
-- connect Arabic explanations with essential English terminology
-- build enough conceptual depth to discuss topics academically and confidently
-- expand the site over time into a personal knowledge base for advanced study
+- فهم كل مجال من جذوره قبل الانتقال إلى مستواه المتقدم
+- الربط بين الشرح العربي والمصطلحات الإنجليزية الأساسية في التخصص
+- تكوين لغة علمية تساعد على القراءة والمناقشة والبحث بثقة
+- تحويل رحلة التعلم إلى قاعدة معرفية تتوسع بشكل منظم مع الزمن
 
-## Current Scope
+## ما الذي يقدمه المشروع حاليًا؟
 
-The current version includes:
+النسخة الحالية تتضمن:
 
-- a polished Arabic `RTL` learning interface
-- a homepage introducing the discipline and its main areas
-- dedicated overview pages for the core required PhD subjects
-- foundational prompts that clarify what must be understood before advanced study
-- English terminology support with pronunciation playback in the browser
-- a content structure that can be expanded incrementally into lessons
+- واجهة عربية تدعم `RTL`
+- صفحة رئيسية تعرّف بتخصص علوم الحاسب ومجالاته
+- صفحات تعريفية للمجالات الأساسية في الخطة
+- تمهيدًا للأساسيات التي يجب فهمها قبل التعمق
+- مصطلحات إنجليزية مع دعم النطق داخل المتصفح
+- بنية قابلة للتوسع لاحقًا إلى دروس تفصيلية
 
-## Core Areas
+## المجالات الأساسية الحالية
 
-At this stage, the site covers four major subject areas inspired by the doctoral coursework:
+يعرض الموقع حاليًا أربع مساحات رئيسية مستوحاة من المقررات الإجبارية في البرنامج:
 
-- Advanced Computer Networks
-- Software Engineering and Design
-- Advanced Database Systems
-- Advanced Computer Architecture
+- الشبكات المتقدمة
+- هندسة البرمجيات وتصميمها
+- أنظمة قواعد البيانات المتقدمة
+- هندسة الكمبيوتر المتقدمة
 
-Each area page is designed as a launch point for future lessons, not as a final static reference.
+كل صفحة من هذه الصفحات ليست مجرد بطاقة تعريف، بل نقطة انطلاق لمسار تعلم يمكن أن يتوسع لاحقًا إلى دروس أعمق وأكثر تخصصًا.
 
-## Public Use
+## كيف يستفيد الزائر من النسخة العامة؟
 
-If you are visiting this repository as a learner, you can use the published website as a guided conceptual map for these fields. The public version is intended to help you explore the structure of the subjects, review terminology, and identify what to study next.
+إذا دخلت إلى هذا المستودع أو إلى النسخة المنشورة من الموقع، فبإمكانك استخدامه كخريطة تعلم مفاهيمية تساعدك على:
 
-What the public site does well:
+- فهم صورة كل مجال بشكل أوضح
+- معرفة الأساسيات التي يجب عدم تجاوزها
+- تثبيت المصطلحات الإنجليزية المهمة
+- ترتيب أولوياتك قبل الغوص في الكتب أو الأوراق العلمية أو المقررات
 
-- introduces each field clearly
-- highlights prerequisite ideas that should not be skipped
-- organizes topics in a way that supports deeper future study
+النسخة العامة مناسبة جدًا كبداية منظمة، لكنها لا تمثل بعد منهجًا مكتملًا أو موسوعة نهائية.
 
-## Personalized Lesson Expansion
+## كيف تتم إضافة الدروس الجديدة؟
 
-One important part of the original workflow is personalized lesson creation.
+أحد أهم أجزاء هذا المشروع هو أن المحتوى يمكن أن ينمو بطريقة تفاعلية.
 
-In the author's local setup, new lessons are added in response to specific questions. That means the site grows interactively: a question leads to a new lesson, the lesson explains the necessary fundamentals, and the knowledge base becomes more detailed over time.
+في التجربة الأصلية، لا تُكتب جميع الدروس دفعة واحدة، بل يُبنى المحتوى بناءً على الأسئلة الفعلية التي تظهر أثناء التعلم. كل سؤال جديد يمكن أن يتحول إلى درس جديد يبدأ من الأساسيات اللازمة للفهم، ثم يتدرج حتى يصل إلى المستوى المناسب.
 
-If you want that same experience for yourself, you will need to:
+لهذا السبب، إذا أراد شخص آخر أن يحصل على نفس التجربة التفاعلية، فسيحتاج إلى:
 
-1. clone or download this project locally
-2. open it in your own development environment
-3. use Codex, or a similar coding assistant, to extend the content based on your questions
+1. تنزيل المشروع أو نسخه محليًا
+2. فتحه في بيئة تطوير مناسبة
+3. استخدام Codex أو مساعد برمجي مشابه لتوسيع المحتوى وإضافة الدروس حسب أسئلته
 
-In other words, the public repository gives you the platform and structure, while the personalized lesson-generation workflow happens locally.
+بمعنى آخر: المستودع العام يوفّر الهيكل والمنصة والاتجاه، أما التخصيص التفاعلي للدروس فيتم محليًا.
 
-## Running Locally
+## التشغيل محليًا
 
-This is a static web project and can be served with any simple local server.
+هذا المشروع عبارة عن موقع ثابت `Static Site` ويمكن تشغيله بأي خادم محلي بسيط.
 
-Example:
+مثال:
 
 ```bash
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Then open:
+ثم افتح:
 
 `http://127.0.0.1:4173`
 
-## Project Structure
+## بنية المشروع
 
-- [index.html](/Users/mohammed/Documents/Computer%20Science/index.html): main document shell
-- [styles.css](/Users/mohammed/Documents/Computer%20Science/styles.css): visual design and responsive layout
-- [app.js](/Users/mohammed/Documents/Computer%20Science/app.js): routing, content data, glossary, and interaction logic
-- [.github/workflows/deploy-pages.yml](/Users/mohammed/Documents/Computer%20Science/.github/workflows/deploy-pages.yml): automatic deployment to GitHub Pages
+- [index.html](/Users/mohammed/Documents/Computer%20Science/index.html): الهيكل الرئيسي للواجهة
+- [styles.css](/Users/mohammed/Documents/Computer%20Science/styles.css): التصميم، الألوان، والتجاوب
+- [app.js](/Users/mohammed/Documents/Computer%20Science/app.js): المحتوى، التنقل، القاموس، والتفاعلات
+- [.github/workflows/deploy-pages.yml](/Users/mohammed/Documents/Computer%20Science/.github/workflows/deploy-pages.yml): النشر التلقائي إلى GitHub Pages
 
-## Free Deployment
+## النشر المجاني
 
-This repository is configured for free automatic deployment using GitHub Pages through GitHub Actions.
+المشروع مهيأ للنشر المجاني عبر `GitHub Pages` باستخدام `GitHub Actions`.
 
-After pushing the project to a GitHub repository and enabling `GitHub Actions` as the Pages source, every push to the `main` branch will trigger a new deployment.
+بعد رفع المستودع إلى GitHub وتفعيل `GitHub Actions` كمصدر للنشر في إعدادات `Pages`، سيؤدي كل `push` جديد إلى فرع `main` إلى نشر التحديثات تلقائيًا.
 
-## Who This Project Is For
+## لمن يفيد هذا المشروع؟
 
-This repository may be useful for:
+قد يكون هذا المشروع مناسبًا لـ:
 
-- Arabic-speaking learners preparing for advanced study in Computer Science
-- future PhD students who want a structured roadmap before coursework begins
-- self-learners who want to connect terminology, intuition, and academic framing
-- anyone interested in turning a personal learning journey into a living educational website
+- الطلاب الناطقين بالعربية الراغبين في الاستعداد للدراسات العليا في علوم الحاسب
+- طلاب الدكتوراه المستقبليين الذين يريدون بناء تصور واضح قبل بداية البرنامج
+- المتعلمين ذاتيًا الذين يريدون ربط الفهم النظري بالمصطلحات الأكاديمية
+- كل من يرغب في تحويل رحلته التعليمية الشخصية إلى موقع معرفي حي وقابل للنمو
 
-## Future Direction
+## الاتجاه المستقبلي
 
-The long-term direction is to transform this project into a rich, evolving educational system where each area grows through layered lessons, conceptual maps, terminology support, and question-driven expansion.
+الهدف على المدى الطويل هو تحويل هذا المشروع إلى نظام تعليمي غني ينمو تدريجيًا عبر الدروس، الخرائط المفاهيمية، المصطلحات، والأسئلة المتولدة من التعلم نفسه.
 
-The site is intentionally built so that it can mature over time rather than trying to present a finished curriculum all at once.
+تم بناء الموقع بهذه الطريقة عن قصد: ليس ليقدّم كل شيء دفعة واحدة، بل ليصبح أقوى وأكثر عمقًا مع كل إضافة جديدة.
