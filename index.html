@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>رحلة الدكتوراه في علوم الحاسب</title>
+    <meta
+      name="description"
+      content="موقع تعليمي عربي يساعد على الاستعداد المثالي لدكتوراه علوم الحاسب عبر صفحات تعريفية ودروس تتوسع بناء على الأسئلة."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <a class="brand" href="#/">
+            <span class="brand-mark">CS</span>
+            <span>
+              <strong>رحلة الدكتوراه</strong>
+              <small>Computer Science Doctoral Prep</small>
+            </span>
+          </a>
+          <button class="ghost-button" id="speak-page" type="button">
+            قراءة الصفحة
+          </button>
+        </nav>
+
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <p class="eyebrow">جامعة الملك عبدالعزيز • علوم الحاسب</p>
+            <h1>موقع تعليمي يبني فهمًا عميقًا قبل الدكتوراه</h1>
+            <p class="lead">
+              هذه النسخة الأولى مصممة لتكون قاعدة معرفية عربية واضحة تبدأ
+              بالتعريف بالتخصص، ثم تفتح لك أبواب المجالات الأساسية في الخطة
+              الدراسية، وبعدها نضيف الدروس المتقدمة بالتدرج اعتمادًا على أسئلتك.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#/areas">ابدأ بالمجالات</a>
+              <a class="secondary-button" href="#/readiness">جاهزيتي للدكتوراه</a>
+            </div>
+          </section>
+
+          <aside class="hero-panel">
+            <h2>فلسفة التعلّم هنا</h2>
+            <ul class="compact-list">
+              <li>الشرح بالعربية مع تثبيت المصطلحات الإنجليزية.</li>
+              <li>البدء من الأساسيات التي لا يصح تجاوزها.</li>
+              <li>الانتقال من الفهم إلى النقاش والبحث والتحليل.</li>
+              <li>بناء الدروس القادمة حسب أسئلتك أنت.</li>
+            </ul>
+          </aside>
+        </div>
+      </header>
+
+      <main id="app" class="app-content" aria-live="polite"></main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
